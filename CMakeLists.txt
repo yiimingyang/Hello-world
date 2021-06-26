@@ -10,18 +10,18 @@ PROJECT(hello_world)
 #source directory，源文件目录
 AUX_SOURCE_DIRECTORY(src DIR_SRCS)
 
-SET(TEST ${DIR_SRC})
+SET(TEST_HELLO ${DIR_SRCS})
 #目前暂时先了解SET指令用来显式定义变量
 
-MESSAGE(STATUS "This is Binary dir" ${HELLO_BINARY_DIR})
-MESSAGE(STATUS "This is SOURCE dir" ${HELLO_SOURCE_DIR})
+MESSAGE(STATUS "This is Binary dir" ${hello_world_BINARY_DIR})
+MESSAGE(STATUS "This is SOURCE dir" ${hello_world_SOURCE_DIR})
 # MESSAGE用法
 # MESSAGR([SEND_ERROR | STATUS | FATAL_ERROR] "message to display")
 # SEND_ERROR : 产生错误,生成过程被跳过
 # STATUS: 输出前缀为-的信息
 # FATAL_ERROR: 立即终止所有cmake过程
 
-ADD_EXECUTABLE(${PROJECT_NAME} ${TEST})
+ADD_EXECUTABLE(${PROJECT_NAME} ${TEST_HELLO})
  
 # 这个可以生产hello的可执行文件,相关的源文件是SRC_LIST中定义的源文件列表
 # ${}用来引用变量,
