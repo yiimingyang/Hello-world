@@ -15,7 +15,7 @@ MESSAGE(STATUS "This is SOURCE dir" ${HELLO_SOURCE_DIR})
 # SEND_ERROR : 产生错误,生成过程被跳过
 # STATUS: 输出前缀为-的信息
 # FATAL_ERROR: 立即终止所有cmake过程
-ADD_EXECUTABLE(hello ${SRC_LIST})
+ADD_EXECUTABLE(hello ${DIR_SRCS})
  
 # 这个可以生产hello的可执行文件,相关的源文件是SRC_LIST中定义的源文件列表
 # ${}用来引用变量,
