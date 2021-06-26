@@ -21,6 +21,4 @@ ADD_EXECUTABLE(hello ${SRC_LIST})
 # ${}用来引用变量,
 # 需要注意,指令大小写无关,参数和变量大小写相关,但是推荐使用大写指令
 # ADD_EXECUTABLE 可以忽略source列表中的文件后缀,camke会在本目录自动查找,但是不推荐,万一存在main.
-————————————————
-版权声明：本文为CSDN博主「hjxu2016」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/hjxu2016/article/details/83014069
+
