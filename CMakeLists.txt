@@ -6,8 +6,10 @@ PROJECT (HELLOWORLD)
 #　译,两个变量目前指的是工作所在路径，如果是外部编译，两者所指代的内容会有所不同，但是如果改变工程名，
 # 那么这两个变量也需要修改，那会很麻烦，所有，建议直接使用PROJECT_BINARY_DIR 和 PROJECT_SOURCE_DIR
 # 外部编译时,PROJECT_BINATY_DIR指的是编译路径, PROJECT_SOURCE_DIR指工程路径
-SET(SRC_LIST main.cpp)
+
+SET(DIR_SRC main.cpp)
 #目前暂时先了解SET指令用来显式定义变量
+
 MESSAGE(STATUS "This is Binary dir" ${HELLO_BINARY_DIR})
 MESSAGE(STATUS "This is SOURCE dir" ${HELLO_SOURCE_DIR})
 # MESSAGE用法
@@ -15,6 +17,7 @@ MESSAGE(STATUS "This is SOURCE dir" ${HELLO_SOURCE_DIR})
 # SEND_ERROR : 产生错误,生成过程被跳过
 # STATUS: 输出前缀为-的信息
 # FATAL_ERROR: 立即终止所有cmake过程
+
 ADD_EXECUTABLE(HELLOWORLD ${DIR_SRCS})
  
 # 这个可以生产hello的可执行文件,相关的源文件是SRC_LIST中定义的源文件列表
