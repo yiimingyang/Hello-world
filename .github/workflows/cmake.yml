@@ -29,7 +29,7 @@ jobs:
       
     - uses: actions/upload-artifact@main
       with:
-        name: exe artifacts
+        name: webpack artifacts
         path: public/
       
   test:
@@ -39,7 +39,7 @@ jobs:
     steps:
     - uses: actions/download-artifact@main
       with:
-        name: exe artifacts
+        name: webpack artifacts
         path: public
     - name: Test
       working-directory: ${{github.workspace}}/build
