@@ -1,10 +1,7 @@
 name: CMake
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  push
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -29,10 +26,28 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-
+      
+    - uses: actions/upload-artifact@main
+      with:
+        name: exe artifacts
+        path: ${{github.workspace}}/build
+        # path: /home/runner/work/Hello-world/Hello-world/bin
+      
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/download-artifact@main
+      with:
+        name: exe artifacts
+        path: ${{github.workspace}}/build
+        # path: /home/runner/work/Hello-world/Hello-world/bin
     - name: Test
       working-directory: ${{github.workspace}}/build
       # Execute tests defined by the CMake configuration.  
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ctest -C ${{env.BUILD_TYPE}}
+      run: |
+        chmod +x hello_world
+        ./hello_world
       
