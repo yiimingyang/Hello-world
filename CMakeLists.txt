@@ -22,9 +22,11 @@ MESSAGE(STATUS "This is SOURCE dir" ${hello_world_SOURCE_DIR})
 # FATAL_ERROR: 立即终止所有cmake过程
 
 ADD_EXECUTABLE(${PROJECT_NAME} ${TEST_HELLO})
- 
-# 这个可以生产hello的可执行文件,相关的源文件是SRC_LIST中定义的源文件列表
 # ${}用来引用变量,
 # 需要注意,指令大小写无关,参数和变量大小写相关,但是推荐使用大写指令
 # ADD_EXECUTABLE 可以忽略source列表中的文件后缀,camke会在本目录自动查找,但是不推荐,万一存在main.
+
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+
+
 
