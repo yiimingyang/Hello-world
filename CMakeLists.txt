@@ -21,7 +21,7 @@ MESSAGE(STATUS "This is SOURCE dir" ${hello_world_SOURCE_DIR})
 # STATUS: 输出前缀为-的信息
 # FATAL_ERROR: 立即终止所有cmake过程
 
-SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin) 
+# SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin) 
 ADD_EXECUTABLE(${PROJECT_NAME} ${TEST_HELLO})
 # ${}用来引用变量,
 # 需要注意,指令大小写无关,参数和变量大小写相关,但是推荐使用大写指令
