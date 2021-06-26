@@ -1,4 +1,4 @@
-PROJECT (HELLO)
+PROJECT (HELLOWORLD)
 # PREJECT指令用法
 # PROJECT(projectname [CXX] [C] [JAVA])
 # 可以用这个指令定义工程的名称,并指定工程支持的语言,语言列表是可以忽略的,默认情况表示支持所有语言
@@ -15,7 +15,7 @@ MESSAGE(STATUS "This is SOURCE dir" ${HELLO_SOURCE_DIR})
 # SEND_ERROR : 产生错误,生成过程被跳过
 # STATUS: 输出前缀为-的信息
 # FATAL_ERROR: 立即终止所有cmake过程
-ADD_EXECUTABLE(hello ${DIR_SRCS})
+ADD_EXECUTABLE(HELLOWORLD ${DIR_SRCS})
  
 # 这个可以生产hello的可执行文件,相关的源文件是SRC_LIST中定义的源文件列表
 # ${}用来引用变量,
